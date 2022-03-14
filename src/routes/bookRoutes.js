@@ -6,19 +6,22 @@ function router(nav){
             Title:'Harry Potter',
             Author:'J K Rowling',
             Genre:'Fantasy',
-            image:"harry.png"
+            image:"harry.png",
+            imageAuthor:'rowling.jpg'
         },
         {
             Title:'Tom and Jerry',
             Author:'Joseph Barbera',
             Genre:'Cartoon',
-            image:'tomAndJerry.png'
+            image:'tomAndJerry.png',
+            imageAuthor:'barbera.jpg'
         },
         {
             Title:'Pathummayude Aadu',
             Author:'Vaikkam Muhammed Basheer',
             Genre:'Drama',
-            image:'aadu.png'
+            image:'aadu.png',
+            imageAuthor:'basheer.png'
         }
     ]
     booksRouter.get('/',function(req,res){
@@ -32,10 +35,11 @@ function router(nav){
     
     // booksRouter.get("/single",function(req,res){
     //     res.send("hi ");
-    // })
+    // }) 
     
     booksRouter.get('/:id',function(req,res){
         const id = req.params.id
+        console.log(id)
         res.render('book',{
             nav,
             title:'Library',
